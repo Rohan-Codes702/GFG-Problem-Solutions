@@ -1,14 +1,17 @@
-// User function Template for Java
-class Solution {
-    public static String utility(int n) {
+import java.util.*;
 
-        // write your code here
+public class Solution {
+    public static void main(String args[]) {
+        // Your code here
+        Scanner sc=new Scanner(System.in);
+        
+        int n=sc.nextInt();
+        
         if(n%2==0){
-            return "Friend";
+            System.out.print("You");
         }
         else{
-           return "You";
+            System.out.print("Friend");
         }
-      
     }
 }
