@@ -1,13 +1,23 @@
 class Solution {
     public int peakElement(int[] arr) {
-        int n = arr.length;
-
-        for (int i = 0; i < n; i++) {
-            if ((i == 0 || arr[i - 1] < arr[i]) &&
-                (i == n - 1 || arr[i] > arr[i + 1])) {
-                return i;
+        // code here
+        int n=arr.length;
+        int i=0;
+        int j=n-1;
+        
+        while(i<j){
+            int mid=(i+j)/2;
+            
+            if(mid>0 && mid<n && arr[mid]>arr[mid+1] && arr[mid]>arr[mid-1]){
+                return mid;
+            }
+            else if(arr[mid]<arr[mid+1]){
+                i=mid+1;
+            }
+            else{
+                j=mid-1;
             }
         }
-        return 0;
+        return i ;
     }
 }
